@@ -83,8 +83,8 @@ library(fitdistrplus) #Distribution Fitting
 # Years.BK <- as.character(c(2010:2018)) #Brian Kelly Coaching Years at ND
 # Years.SS <- as.character(c(2014:2018)) #Scott Satterfield Total Coaching Years (limited experience). Data starts at 2014
 # 
-# tempSCORES_BK <- GetGameScores(Years.BK , "513")
-# tempSCORES_SS <- GetGameScores(Years.SS , "27")
+# tempSCORES_BK <- GetGameScores(Years.BK , "Notre Dame")
+# tempSCORES_SS <- GetGameScores(Years.SS , "Appalachian State")
 # 
 # Scores.BrianKelly <- CleanGameScores(tempSCORES_BK)
 # Scores.ScottSatt  <- CleanGameScores(tempSCORES_SS)
