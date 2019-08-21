@@ -11,5 +11,7 @@ This script requires 3 packages to work properly:
 
 ### Data
 
+The web scrape source was intentionally obfuscated. The web scraping function was left intact for process reference.
+
 Required datasets are available in this repository so that the user does not have to do any web scraping.  
 Included datasets should be written to the objects "Scores.BrianKelly" or "Scores.ScottSatt" where appropriate.
