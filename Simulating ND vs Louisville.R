@@ -18,7 +18,8 @@ library(fitdistrplus) #Distribution Fitting
 # GAME SCORES FOR DISTRIBUTION FITTING
 # 
 #
-#Capacity <- 40000
+
+Capacity <- 40000
 
 #Functions:
 # GetGameScores <- function(INPUT_YEAR , INPUT_TEAM){
@@ -45,65 +46,58 @@ library(fitdistrplus) #Distribution Fitting
 #   gc()
 #   
 # }
-# CleanGameScores <- function(INPUT){
-# 
-#     bind_rows(INPUT) %>%
-#     dplyr::select(1:3,5) %>%
-#     filter(!grepl("@" , Result)) %>%
-#     mutate(GameMonth = 
-#              case_when(
-#                substr(Date,1,2) == "08" ~ "August/September",
-#                substr(Date,1,2) == "09" ~ "August/September",
-#                substr(Date,1,2) == "10" ~ "October",
-#                substr(Date,1,2) == "11" ~ "November",
-#                substr(Date,1,2) == "12" ~ "December/January",
-#                substr(Date,1,2) == "01" ~ "December/January",
-#                TRUE ~ as.character(Date)
-#              )
-#     ) %>%
-#     dplyr::select(GameMonth,
-#                   Result,
-#                   Attendance) %>%
-#     separate(Result,c("PtsFor","PtsAgainst"), sep = "-") %>%
-#     mutate(PtsFor = gsub("W ","",PtsFor),
-#            PtsFor = gsub("L ","",PtsFor)) %>%
-#     mutate(Attendance = gsub(",","",Attendance)) %>%
-#     mutate(Attendance = as.numeric(Attendance),
-#            PtsFor = as.numeric(PtsFor),
-#            PtsAgainst = as.numeric(PtsAgainst)) %>%
-#     
-#     mutate(PtsForAdj = ifelse(Attendance >= Capacity , PtsFor , PtsFor * 0.70),
-#            PtsAgainstAdj = ifelse(Attendance >= Capacity , PtsAgainst , PtsAgainst * 0.70)) %>%
-#     
-#     mutate(PtsForAdj = ifelse(PtsForAdj == 0 , 0.00001 , PtsForAdj),
-#            PtsAgainstAdj = ifelse(PtsAgainstAdj == 0 , 0.00001 , PtsAgainstAdj))
-#   
-# }
-# 
-# Years.BK <- as.character(c(2010:2018)) #Brian Kelly Coaching Years at ND
-# Years.SS <- as.character(c(2014:2018)) #Scott Satterfield Total Coaching Years (limited experience). Data starts at 2014
-# 
-# tempSCORES_BK <- GetGameScores(Years.BK , "Notre Dame")
-# tempSCORES_SS <- GetGameScores(Years.SS , "Appalachian State")
-# 
-# Scores.BrianKelly <- CleanGameScores(tempSCORES_BK)
-# Scores.ScottSatt  <- CleanGameScores(tempSCORES_SS)
-# 
-# 
-# remove(Capacity , Years.BK , Years.SS)  
-# remove(tempSCORES_BK , tempSCORES_SS)
-# gc()
+CleanGameScores <- function(INPUT){
+ 
+     bind_rows(INPUT) %>%
+     dplyr::select(1:3,5) %>%
+     filter(!grepl("@" , Result)) %>%
+     mutate(GameMonth = 
+              case_when(
+                substr(Date,1,2) == "08" ~ "August/September",
+                substr(Date,1,2) == "09" ~ "August/September",
+                substr(Date,1,2) == "10" ~ "October",
+                substr(Date,1,2) == "11" ~ "November",
+                substr(Date,1,2) == "12" ~ "December/January",
+                substr(Date,1,2) == "01" ~ "December/January",
+                TRUE ~ as.character(Date)
+              )
+     ) %>%
+     dplyr::select(GameMonth,
+                   Result,
+                   Attendance) %>%
+     separate(Result,c("PtsFor","PtsAgainst"), sep = "-") %>%
+     mutate(PtsFor = gsub("W ","",PtsFor),
+            PtsFor = gsub("L ","",PtsFor)) %>%
+     mutate(Attendance = gsub(",","",Attendance)) %>%
+     mutate(Attendance = as.numeric(Attendance),
+            PtsFor = as.numeric(PtsFor),
+            PtsAgainst = as.numeric(PtsAgainst)) %>%
+     
+     mutate(PtsForAdj = ifelse(Attendance >= Capacity , PtsFor , PtsFor * 0.70),
+            PtsAgainstAdj = ifelse(Attendance >= Capacity , PtsAgainst , PtsAgainst * 0.70)) %>%
+     
+     mutate(PtsForAdj = ifelse(PtsForAdj == 0 , 0.00001 , PtsForAdj),
+            PtsAgainstAdj = ifelse(PtsAgainstAdj == 0 , 0.00001 , PtsAgainstAdj))
+   
+ }
+ 
+ Years.BK <- as.character(c(2010:2018)) #Brian Kelly Coaching Years at ND
+ Years.SS <- as.character(c(2014:2018)) #Scott Satterfield Total Coaching Years (limited experience). Data starts at 2014
+ 
+ tempSCORES_BK <- GetGameScores(Years.BK , "Notre Dame")
+ tempSCORES_SS <- GetGameScores(Years.SS , "Appalachian State")
+ 
+ Scores.BrianKelly <- CleanGameScores(tempSCORES_BK)
+ Scores.ScottSatt  <- CleanGameScores(tempSCORES_SS)
+ 
+ 
+ remove(Capacity , Years.BK , Years.SS)  
+ remove(tempSCORES_BK , tempSCORES_SS)
+ gc()
 
 
 
-#------------------------------------DISTRIBUTION FITTING PROCESS-------------------------
-#
-# DISTRIBUTION FITTING PROCESS
-#
-
-
-
-#--------------------------------------------------------------Brian Kelly--------------------------------------------------
+#--------------------------------------------DISTRIBUTION FITTING: Brian Kelly--------------------------------------------------
 
 #August / September
 #
@@ -166,7 +160,7 @@ remove(fitND.g2 , fitND.ln2 , fitND.n2 , fitND.w2)
 gc()
 
 
-#--------------------------------------------------------------Scott Satterfield--------------------------------------------------
+#-----------------------------------------DISTRIBUTION FITTING: Scott Satterfield--------------------------------------------------
 
 #Step 1 - Eyeballs on the distribution
 
