@@ -21,7 +21,9 @@ library(fitdistrplus) #Distribution Fitting
 
 Capacity <- 40000
 
-#Functions:
+# Functions:
+
+# Web Scrape Game Score. URL has been removed. Use function as reference only.
 # GetGameScores <- function(INPUT_YEAR , INPUT_TEAM){
 #   templist <- list()
 #   
@@ -46,6 +48,8 @@ Capacity <- 40000
 #   gc()
 #   
 # }
+
+
 CleanGameScores <- function(INPUT){
  
      bind_rows(INPUT) %>%
