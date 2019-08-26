@@ -3,7 +3,7 @@ Simulating 1,000,000 match-ups between Notre Dame and Louisville
 
 ### Packages
 
-This script requires 3 packages to work properly:
+This script requires 3 packages:
 
 * [Tidyverse](https://www.tidyverse.org/packages/) - Awesome data bending/mashing tools
 * [rvest](https://cran.r-project.org/web/packages/rvest/rvest.pdf) - Easy Peasy Website Scrapey
@@ -11,7 +11,11 @@ This script requires 3 packages to work properly:
 
 ### Data
 
-The web scrape source was intentionally obfuscated. The web scraping function was left intact for process reference.
+The web scrape source was intentionally obfuscated. The web scraping function was left intact for reference.
 
 Required datasets are available in this repository so that the user does not have to do any web scraping.  
 Included datasets should be written to the objects "Scores.BrianKelly" or "Scores.ScottSatt" where appropriate.
+
+### Analysis
+
+this read-me is under construction
