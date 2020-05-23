@@ -1,6 +1,6 @@
 # Simulating 1,000,000 Games: Notre Dame vs Louisville
 
-The Notre Dame Fighting Irish will beat the Louisville Cardinals on  September 2, 2019, but the Fighting Irish should not take this game  lightly. Of the 1,000,000 games they have played today, the Irish have  won only 623,499 of those games.
+The Notre Dame Fighting Irish will beat the Louisville Cardinals on  September 2, 2019, but the Fighting Irish should not take this game  lightly. Of the 1,000,000 games they have during the past 10 minutes, the Irish have  won only 623,499 of those games.
 
 
 
@@ -176,6 +176,6 @@ Inspecting the proportions of 1s (ND victory) and 0s (ND loss) in the column ND_
 0.376501 0.623499 
 ```
 
-### Areas of Improvement:
+### Areas of Improvement
 
 Game attendance was used as a fuzzy proxy for strength of schedule, but it does not account for situations where a Power 5 team defeats a smaller school at home. For example: Notre Dame's 2018 home victory against Ball State should not be weighted the same as their 2017 home blow-out against USC, despite both being played in the presence of 80,000 fans. An improvement would be to have the simulation also handle home game victories against non-Power 5 opponents.
