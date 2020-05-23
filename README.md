@@ -14,7 +14,7 @@ Let's dive into how simulation and other techniques are coordinated to generate 
 
 ### Packages
 
-This script requires 3 packages:
+This analysis requires 3 packages:
 
 * [Tidyverse](https://www.tidyverse.org/packages/) - Awesome data bending/mashing tools
 * [rvest](https://cran.r-project.org/web/packages/rvest/rvest.pdf) - Easy Peasy Website Scrapey
