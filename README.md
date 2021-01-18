@@ -1,6 +1,6 @@
 # Simulating 1,000,000 Games: Notre Dame vs Louisville
 
-The Notre Dame Fighting Irish will beat the Louisville Cardinals on  September 2, 2019, but the Fighting Irish should not take this game  lightly. Of the 1,000,000 games they have during the past 10 minutes, the Irish have  won only 623,499 of those games.
+The Notre Dame Fighting Irish will beat the Louisville Cardinals on September 2, 2019, but the Fighting Irish should not take this game lightly. Of the 1,000,000 games they have played over a 10 minute period, the Irish have won only 623,499 of those games.
 
 
 
